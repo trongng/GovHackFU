@@ -21,8 +21,8 @@
 </div>
 
 <div ng-show="quizOver">
-    <h1>Quiz is over</h1>
-    <button ng-click="Reset()">Play again</button>
+    <h2>Thanks for playing! Here is your character.</h2>
+    <button ng-click="reset()">Play again</button>
 </div>
 
 
@@ -30,6 +30,8 @@
     <p>Welcome to the Fed Uni Course Quiz</p>
     <button id="startQuiz" ng-click="start()">Start the Quiz</button>
 </div>
+
+<br><br>
 
 <div id="charAttributes">
     Char tags: {{characterTags}}

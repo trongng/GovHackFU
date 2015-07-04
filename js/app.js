@@ -56,6 +56,8 @@ app.directive('quiz', function(quizFactory) {
                 return scope.characterTags;
             };
 
+            scope.reset();
+
         }
     }
 });
