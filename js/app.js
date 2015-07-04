@@ -11,30 +11,26 @@ app.directive('quiz', function(quizFactory) {
                 scope.quizOver = false;
                 scope.inProgress = true;
                 scope.getQuestion();
-                scope.fields = ["TITLE", "CAMPUS", "DEPARTMENT", "SCHOOL", "CAREERS", "PROGRAM_OUTLINE"];
 
                 scope.characterTags = [];
                 scope.charAttributes = {'strength': 0};
-
                 scope.JSON = {};
-
 
                 /* Fed Uni CSV Fields
                  * ------------------
                  * TITLE
-                 * CAMPUS
                  * FACULTY
-                 * SCHOOL
-                 * CAREERS
-                 *
+                 * CAREER
+                 * DESCRIPTION
                  * */
                 d3.csv("data/PROGRAM_DATA_BACHELOR.csv", function(data) {
                     scope.JSON.degree = data[0].TITLE;
                     scope.JSON.faculty = data[0].FACULTY;
                     scope.JSON.career = ((data[0].CAREER_OPPORTUNITIES != "") ? data[0].CAREER_OPPORTUNITIES : "N/A");
                     scope.JSON.description = data[0].PROGRAM_OUTLINE;
+                    // scope.descriptionHTML = sce.trustAsHtml(scope.JSON.description);
 
-                    console.log(scope.degreeJSON);
+                    // console.log(scope.degreeJSON);
                 });
 
             };
@@ -43,6 +39,7 @@ app.directive('quiz', function(quizFactory) {
                 scope.inProgress = false;
                 scope.characterTags = [];
                 scope.charAttributes = {};
+                scope.setHTML();
             };
 
             scope.getQuestion = function() {
@@ -74,12 +71,18 @@ app.directive('quiz', function(quizFactory) {
                 scope.getQuestion();
             };
 
+            // stub
             scope.returnJSON = function() {
                 return scope.characterTags;
             };
 
-            scope.reset();
+            scope.setHTML = function() {
+                $("#career").html(scope.JSON.career);
+                $("#description").html(scope.JSON.description);
+            };
 
+            // scope.reset();
+            // scope.setHTML();
         }
     }
 });
@@ -92,12 +95,26 @@ app.factory('quizFactory', function() {
             options: ["Indoor", "Outdoor"]
         } /*,
         {
-            question: "What was your favourite subject in school?",
-            options: ["Maths", "Biology", "English", "Sports"]
+            question: "What was your favourite subject in high school?",
+            options:["Agriculture", "Business Education", "Art", "Computer","Dance","Criminal Science",
+                "Health & Physical Education","Mathematics","Music","Chemistry","Physics","Biology","Geography"]
         },
         {
-            question: "Are you...",
-            options: ["Creative", "Logical", "Business-oriented", "Hands on"]
+            question:"Which field/environment do you like to work in?",
+            options:["Built_Environment ", "Business", "Communication", "Creative_Arts","Cultural","Design",
+                "Education","Engineering","Environment","Health","Information_Techonology"]
+        },
+        {
+            question:"What activities are you interested in?",
+            options:["Artistic ", "Business", "People_Contact", "Creative_Arts","Mechanical","Scientific"]
+        },
+        {
+            question:"What important to you?",
+            options:["Achievement", "Challenge", "Creativity", "Expertise","Independence","Leading", "Responsibility" ]
+        },
+        {
+            question:"How would you describe working style?",
+            options:["Enthusiastic  ", "Imaginative", "Structured", "Logical" ]
         } */
     ];
 
