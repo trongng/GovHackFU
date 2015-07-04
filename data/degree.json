@@ -1,2 +1,15 @@
-[{"Bachelor of Applied Management": ["Indoor", "Business Education"],
- "Bachelor of Information Technology": ["Indoor", "Maths"]}]
+[{"Bachelor of Applied Management": ["Indoor", "Business Education", "Business", "Business","Achievement","structured"],
+ "Bachelor of Arts": ["Indoor", "Art", "Creative Arts", "Artistic Creative","Creativity","Imaginative"],
+ "Bachelor of Commerce (2015 entry)": ["Indoor", "Business Education", "Business", "Business", "Achievement", "Structured"],
+ "Bachelor of Communication Design": ["Indoor", "Business Education", "Business", "Communication","Achievement","Structured"],
+ "Bachelor of Education (Birth - Year 6)": ["Indoor", "Maths", "Education", "People Contact","Creativity","Structured"],
+ "Bachelor of Food and Nutritional Science (2016 entry)": ["Indoor", "Health And PhysicalEducation", "Health", "People Contact","Responsibility","Structured"]
+,"Bachelor of Geoscience (2016 entry)": ["Outdoor", "Geography", "Environment", "Scientific","Challenge","Logical"]
+,"Bachelor of Health Sciences (Honours)":["Indoor","Health&PhysicalEducation", "Health", "People Contact","Achievement","structured"]
+,"Bachelor of Information Technology":["Indoor", "Computer", "Information technology", "Artistic Creative","Achievement","structured"]
+,"Bachelor of Music Theatre": ["Indoor", "Dance", "Creative Arts", "Artistic Creative","Creativity","Imaginative"]
+
+,"Bachelor of Nursing (2015 entry)":["Indoor", "Health And PhysicalEducation", "Health", "People Contact","Practical","Independence","structured"]
+
+,"Police and Protective Services Officer (PSO) Recruitment": ["Outdoor", "Criminal Science", "Communication/Environment", "People Contact","Independence","Structured"]
+ }]
