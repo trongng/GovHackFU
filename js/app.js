@@ -8,8 +8,8 @@ app.controller('degreesCtrl', function($scope, $http) {
       
       for(var key in $scope.degrees) {
           var tagsArray = $scope.degrees[key]
-          console.log(key);
-          console.log(tagsArray);
+          // console.log(key);
+          // console.log(tagsArray);
         }
 
       // console.log($scope.degrees);
@@ -20,6 +20,7 @@ app.controller('degreesCtrl', function($scope, $http) {
 app.directive('quiz', function(quizFactory) {
     return {
         restrict: 'AE',
+        // require:"^ngController",
         scope: {},
         templateUrl: 'template.html',
         link: function(scope, elem, attrs) {
@@ -31,7 +32,8 @@ app.directive('quiz', function(quizFactory) {
 
                 scope.characterTags = [];
                 scope.charAttributes = {'strength': 0};
-                scope.JSON = {};            
+                scope.attributes = {default: [6, 6, 6, 6, 6, 6]};   
+                scope.JSON = {};
 
                 /* Fed Uni CSV Fields
                  * ------------------
@@ -41,6 +43,7 @@ app.directive('quiz', function(quizFactory) {
                  * DESCRIPTION
                  * */
                 d3.csv("data/PROGRAM_DATA_BACHELOR.csv", function(data) {
+                    console.log(data[0]);
                     scope.JSON.degree = data[0].TITLE;
                     scope.JSON.faculty = data[0].FACULTY;
                     scope.JSON.career = ((data[0].CAREER_OPPORTUNITIES != "") ? data[0].CAREER_OPPORTUNITIES : "N/A");
