@@ -21,10 +21,17 @@
 </div>
 
 <div ng-show="quizOver">
-    <h2>Thanks for playing! Here is your character.</h2>
+    <h3>Thanks for playing!</h3>
+    <br>
+    <b>Degree: </b> {{JSON.degree}} <br>
+    <b>Faculty: </b> {{JSON.faculty}} <br>
+    <b>Careers: </b> {{JSON.career}} <br>
+    <b>Description: </b> {{JSON.description}} <br>
+
     <button ng-click="reset()">Play again</button>
 </div>
 
+<!-- todo: add a "Loading..." button -->
 
 <div class="intro" ng-show="!inProgress">
     <p>Welcome to the Fed Uni Course Quiz</p>
