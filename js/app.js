@@ -1,5 +1,22 @@
 var app = angular.module('quizApp', []);
 
+app.controller('degreesCtrl', function($scope, $http) {
+    
+  $http.get('data/degree.json').then(function(res) {
+      $scope.degrees = res.data[0]; // dictionary level
+      // console.log($scope.degrees["Bachelor of Information Technology"]);
+      
+      for(var key in $scope.degrees) {
+          var tagsArray = $scope.degrees[key]
+          console.log(key)
+          console.log(tagsArray);
+        }
+
+      // console.log($scope.degrees);
+  }); 
+
+});
+
 app.directive('quiz', function(quizFactory) {
     return {
         restrict: 'AE',
@@ -14,7 +31,7 @@ app.directive('quiz', function(quizFactory) {
 
                 scope.characterTags = [];
                 scope.charAttributes = {'strength': 0};
-                scope.JSON = {};
+                scope.JSON = {};            
 
                 /* Fed Uni CSV Fields
                  * ------------------
@@ -40,6 +57,7 @@ app.directive('quiz', function(quizFactory) {
                 scope.characterTags = [];
                 scope.charAttributes = {};
                 scope.setHTML();
+                scope.foo
             };
 
             scope.getQuestion = function() {
@@ -84,6 +102,8 @@ app.directive('quiz', function(quizFactory) {
             // scope.reset();
             // scope.setHTML();
         }
+
+
     }
 });
 
