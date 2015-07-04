@@ -8,7 +8,7 @@ app.controller('degreesCtrl', function($scope, $http) {
       
       for(var key in $scope.degrees) {
           var tagsArray = $scope.degrees[key]
-          console.log(key)
+          console.log(key);
           console.log(tagsArray);
         }
 
@@ -113,29 +113,29 @@ app.factory('quizFactory', function() {
         {
             question: "Are you an indoor or outdoor person?",
             options: ["Indoor", "Outdoor"]
-        } /*,
+        },
         {
             question: "What was your favourite subject in high school?",
-            options:["Agriculture", "Business Education", "Art", "Computer","Dance","Criminal Science",
+            options: ["Agriculture", "Business Education", "Art", "Computer","Dance","Criminal Science",
                 "Health & Physical Education","Mathematics","Music","Chemistry","Physics","Biology","Geography"]
         },
         {
-            question:"Which field/environment do you like to work in?",
-            options:["Built_Environment ", "Business", "Communication", "Creative_Arts","Cultural","Design",
+            question: "Which field/environment do you like to work in?",
+            options: ["Built_Environment ", "Business", "Communication", "Creative_Arts","Cultural","Design",
                 "Education","Engineering","Environment","Health","Information_Techonology"]
         },
         {
-            question:"What activities are you interested in?",
-            options:["Artistic ", "Business", "People_Contact", "Creative_Arts","Mechanical","Scientific"]
+            question: "What activities are you interested in?",
+            options: ["Artistic ", "Business", "People_Contact", "Creative_Arts","Mechanical","Scientific"]
         },
         {
-            question:"What important to you?",
-            options:["Achievement", "Challenge", "Creativity", "Expertise","Independence","Leading", "Responsibility" ]
+            question: "What important to you?",
+            options: ["Achievement", "Challenge", "Creativity", "Expertise","Independence","Leading", "Responsibility" ]
         },
         {
-            question:"How would you describe working style?",
-            options:["Enthusiastic  ", "Imaginative", "Structured", "Logical" ]
-        } */
+            question: "How would you describe working style?",
+            options: ["Enthusiastic  ", "Imaginative", "Structured", "Logical" ]
+        }
     ];
 
     return {
