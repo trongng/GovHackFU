@@ -3,7 +3,7 @@
 * This "file" will be responsible for the following:
 * Setup - 
 *    Dimensions       :  350, 350
-*    BG Color         :  White
+*    BG Color         :  #eee
 *    Attribute shade  :  dependent on the attribute??
 */
 Character c1;
@@ -13,7 +13,8 @@ void setup(){
   smooth();
   
   //predetermined values
-  int attr [] = {9,9,7,2,2,2};
+  // str, dex, int, cha, vit, luc
+  int attr [] = {2,7,7,2,5,5};
   String stags[] = {"a", "b", "c", "d", "e", "f"};
   
   //Make new character

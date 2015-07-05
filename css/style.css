@@ -9,7 +9,15 @@ h1 {
 }
 
 p {
-    text-align: center;
+    text-align: left;
+}
+
+.background {
+    background-color: #12619d;
+}
+
+.main-title {
+    padding-bottom: 50px;
 }
 
 #inner {

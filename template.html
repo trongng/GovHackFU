@@ -22,23 +22,37 @@
 <div id="inner" ng-show="quizOver">
     <h3>Thanks for playing!</h3>
     <br>
-    <b>Degree: </b> {{JSON.degree}} <br>
-    <b>Faculty: </b> {{JSON.faculty}} <br>
-    <b>Career: </b><div id="career"></div>
-    <b>Description: </b><div id="description"></div>
+    {{JSON.degree}} <br>
+    {{JSON.faculty}}
+    <!--
+    <div id="degree"></div>
+    <div id="faculty"></div>
+    -->
+    <div id="career"></div>
+    </b><div id="description"></div>
 
-    <button class ="btn btn-primary btn-lg" ng-click="reset()">More</button>
+    <button class ="btn btn-primary btn-lg" ng-click="reset()">Play Again</button>
+    <button class ="btn btn-primary btn-lg" ng-click="displayResults()">Results</button>
+    <button class ="btn btn-primary btn-lg" ng-click="displayBattle()">Fight!</button>
+</div>
+
+<div id="inner" ng-show="battleOverlay">
+    <img src="processing/attributes.png" width="50%" height="50%"> <br>
+    <button class ="btn btn-primary btn-lg" ng-click="reset()">Play Again</button>
+    <button class ="btn btn-primary btn-lg" ng-click="displayResults()">Results</button>
+    <button class ="btn btn-primary btn-lg" ng-click="displayBattle()">Fight!</button>
 </div>
 
 <!-- todo: add a "Loading..." button -->
 
 <div id="inner" class="intro" ng-show="!inProgress">
-    <p>Welcome to the Fed Uni Course Quiz</p>
+    <br>
+    <p>Welcome to the Federation University course quiz! Based on your choices, you will be matched with an avatar that will battle others for glory.</p>
     <button class ="btn btn-primary btn-lg" id="startQuiz" ng-click="start()">Start the Quiz</button>
 </div>
 
 <br><br>
 
 <div id="charAttributes">
-    Char tags: {{characterTags}}
+    Tags: {{characterTags}}
 </div>
