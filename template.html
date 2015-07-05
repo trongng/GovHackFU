@@ -1,5 +1,5 @@
 <div class="quiz-area" ng-show="inProgress">
-    <div ng-show="!quizOver">
+    <div id="inner" ng-show="!quizOver">
         <h2 id="question">{{question}}</h2>
         <ul id="options">
             <li ng-repeat="option in options">
@@ -10,16 +10,16 @@
             </li>
         </ul>
 
-        <button ng-click="assignTag()" ng-show="answerMode">Submit</button>
+        <button class ="btn btn-primary btn-lg" ng-click="assignTag()" ng-show="answerMode">Submit</button>
 
         <div ng-show="!answerMode">
-            <button ng-click="nextQuestion()" class="next-question">Next</button>
+            <button class ="btn btn-primary btn-lg" ng-click="nextQuestion()" class="next-question">Next</button>
         </div>
 
     </div>
 </div>
 
-<div ng-show="quizOver">
+<div id="inner" ng-show="quizOver">
     <h3>Thanks for playing!</h3>
     <br>
     <b>Degree: </b> {{JSON.degree}} <br>
@@ -27,14 +27,14 @@
     <b>Career: </b><div id="career"></div>
     <b>Description: </b><div id="description"></div>
 
-    <button ng-click="reset()">More</button>
+    <button class ="btn btn-primary btn-lg" ng-click="reset()">More</button>
 </div>
 
 <!-- todo: add a "Loading..." button -->
 
-<div class="intro" ng-show="!inProgress">
+<div id="inner" class="intro" ng-show="!inProgress">
     <p>Welcome to the Fed Uni Course Quiz</p>
-    <button id="startQuiz" ng-click="start()">Start the Quiz</button>
+    <button class ="btn btn-primary btn-lg" id="startQuiz" ng-click="start()">Start the Quiz</button>
 </div>
 
 <br><br>

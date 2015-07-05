@@ -1,8 +1,14 @@
 var app = angular.module('quizApp', []);
 
+/*
 app.controller('degreesCtrl', function($scope, $http) {
     
   $http.get('data/degree.json').then(function(res) {
+      $scope.degrees = {};
+      $scope.$watch("degrees", function(newValue, oldValue){
+                // console.log("old:" + oldValue);
+                // console.info("new:" + newValue);
+            });
       $scope.degrees = res.data[0]; // dictionary level
       // console.log($scope.degrees["Bachelor of Information Technology"]);
       
@@ -12,13 +18,29 @@ app.controller('degreesCtrl', function($scope, $http) {
           // console.log(tagsArray);
         }
 
-      // console.log($scope.degrees);
+      console.log($scope.degrees);
   }); 
 
 });
-
+*/
 app.directive('quiz', function(quizFactory) {
     return {
+        controller: function($scope, $http) {
+            $scope.degrees = {};
+            // adds scope.degrees to the watch list
+            $scope.$watch("degrees", function(newValue, oldValue){
+                console.log("old:" + oldValue);
+                console.info("new:" + newValue);
+            });
+            $scope.foo = 'ok';
+            $http.get('data/degree.json').then(function(result) {
+                    $scope.degrees = result.data[0]; // dictionary level
+                    console.log($scope.degrees["Bachelor of Information Technology"]);
+
+        // console.log($scope.degrees);
+        });
+            
+        },
         restrict: 'AE',
         // require:"^ngController",
         scope: {},
